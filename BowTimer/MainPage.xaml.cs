@@ -13,6 +13,7 @@ namespace BowTimer
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        int sec;
         // Constructor
         public MainPage()
         {
@@ -22,13 +23,17 @@ namespace BowTimer
             //BuildLocalizedApplicationBar();
             System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 10);
+            timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
+
+            sec = 0;
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            int a = 0;
+            sec++;
+
+            TimerText.Text = sec.ToString();
         }
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()

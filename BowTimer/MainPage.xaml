@@ -47,6 +47,7 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock x:Name="TimerText" HorizontalAlignment="Left" Margin="178,171,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="171" Height="103" FontSize="48"/>
 
         </Grid>
 
