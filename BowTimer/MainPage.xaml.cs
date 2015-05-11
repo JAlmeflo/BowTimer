@@ -14,6 +14,8 @@ namespace BowTimer
     public partial class MainPage : PhoneApplicationPage
     {
         int sec;
+        int min;
+
         // Constructor
         public MainPage()
         {
@@ -26,29 +28,31 @@ namespace BowTimer
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
 
+            min = 0;
             sec = 0;
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
             sec++;
+            if (sec >= 60)
+            {
+                min++;
+                sec = 0;
+            }
 
-            TimerText.Text = sec.ToString();
+            string secText = sec.ToString();
+            if (sec < 10)
+            {
+                secText = "0" + secText;
+            }
+
+            //TimerText.Text = min.ToString() + ":" + secText;
         }
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
 
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
-
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/TimerPage.xaml", UriKind.Relative));
+        }
     }
 }

@@ -36,3 +36,4 @@ D:\GitHub\BowTimer\BowTimer\obj\Debug\BowTimer.csproj.GenerateResource.Cache
 D:\GitHub\BowTimer\BowTimer\obj\Debug\BowTimer.dll
 D:\GitHub\BowTimer\BowTimer\obj\Debug\BowTimer.pdb
 D:\GitHub\BowTimer\BowTimer\obj\Debug\XapCacheFile.xml
+D:\GitHub\BowTimer\BowTimer\obj\Debug\TimerPage.g.cs
